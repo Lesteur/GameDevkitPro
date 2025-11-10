@@ -83,7 +83,7 @@ export DEPSDIR := $(CURDIR)/$(BUILD)
 
 CFILES   := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
 CPPFILES := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
-SFILES   := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
+SFILES   := $(foreach dir,$(ASSEMBLY),$(notdir $(wildcard $(dir)/*.s)))
 PNGFILES := $(foreach dir,$(GRAPHICS),$(notdir $(wildcard $(dir)/*.png)))
 BINFILES := $(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
 
@@ -204,7 +204,7 @@ $(SOUNDBANK) : $(MODFILES)
 # add additional rules like this for each image extension
 # you use in the graphics folders
 #---------------------------------------------------------------------------------
-%.s %.h: %.png # %.grit
+%.s %.h: %.png
 #---------------------------------------------------------------------------------
 	grit $< -fts -o $*
 

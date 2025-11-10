@@ -33,9 +33,13 @@
 *.lib
 
 # Executables
-*.exe
-*.out
-*.app
+*.elf
+*.nds
+*.gba
+*.3ds
 
 # debug information files
 *.dwo
+
+# build folders
+/build/
